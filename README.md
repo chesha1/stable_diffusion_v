@@ -1,5 +1,5 @@
 # Stable_Diffusion_v
-Personal changes of codes of Stable Diffusion  
+Personal use of Stable Diffusion  
 自己对于SD的一些操作记录
 
 ## 教程
