@@ -8,6 +8,7 @@ Personal use of Stable Diffusion
 ## 基本使用
 - [基础示例 Text-To-Imgae](https://github.com/chesha1/Stable_Diffusion_v/blob/main/stable_diffusion_example.ipynb)
 - [可以保持latent复现 Text-To-Imgae](https://github.com/chesha1/Stable_Diffusion_v/blob/main/stable_diffusion_latent.ipynb)
+- [可以复现 Imgae-To-Imgae](https://github.com/chesha1/Stable_Diffusion_v/blob/main/stable_diffusion_i2i.ipynb)
 
 ## 进阶使用
 微调
