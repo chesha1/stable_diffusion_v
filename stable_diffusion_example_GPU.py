@@ -22,7 +22,7 @@ guidance_scale = 7.5
 PipelineOut = pipe(prompt, num_inference_steps=num_inference_steps, guidance_scale=guidance_scale, height=height, width=width, num_images_per_prompt=num_images_per_prompt)
 images = PipelineOut.images 
 
-print('Generation successfully.')
+print('Generate successfully.')
 
 for i in range(num_images_per_prompt):
     images[i].save("./images/image_{}.png".format(str(i)))
