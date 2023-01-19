@@ -1,6 +1,7 @@
+# pip install --upgrade git+https://github.com/huggingface/diffusers.git transformers accelerate scipy
 import os
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-os.environ['CUDA_VISIBLE_DEVICES'] = '3'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 from diffusers import StableDiffusionPipeline, DPMSolverMultistepScheduler
 import torch
 
@@ -9,7 +10,7 @@ import torch
 # torch.backends.cuda.matmul.allow_tf32 = True
 
 # model_id = "stabilityai/stable-diffusion-2-1"
-model_id = "./models/stable-diffusion-2-1"
+model_id = "../stable-diffusion-2-1"
 device = torch.device("cuda")
 
 pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
