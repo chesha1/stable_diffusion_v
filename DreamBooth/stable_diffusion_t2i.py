@@ -39,12 +39,12 @@ pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float
 pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)
 pipe = pipe.to(device)
 
-prompt = "masterpiece, best quality, 1girl, white hair, medium hair, cat ears, closed eyes, looking at viewer, :3, cute, scarf, jacket, outdoors, streets"
+prompt = "masterpiece, best quality, 1girl, lun, pink and blue hair, purple eyes, looking at viewer, :3, cute, scarf, jacket, outdoors, streets"
 neg_prompt = "bad fingers"
 num_inference_steps = 50
 height = 512
 width = 512
-num_images_per_prompt = 1
+num_images_per_prompt = 20
 guidance_scale = 7.5
 num_times = 1
 
