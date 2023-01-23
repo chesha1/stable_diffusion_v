@@ -21,7 +21,7 @@ width, height = init_image.size
 init_image = init_image.resize((512, 512))
 
 
-prompt = "masterpiece, best quality, 1girl, orange hair, green eyes, stars around head, looking at viewer"
+prompt = "beautiful anime girl, CG render, 8k, highly detailed, digital painting, masterpiece, best quality, 1girl, pink hair, green eyes, stars around head, looking at viewer, modern disney style"
 neg_prompt = "bad fingers"
 strength = 0.5
 guidance_scale = 7.5
@@ -38,5 +38,6 @@ for i in range(num_times):
                        strength=strength, guidance_scale=guidance_scale, generator=generator,
                        num_images_per_prompt=num_images_per_prompt)
     images = PipelineOut.images
+    print('Generate {}/{} successfully.'.format(str(i), str(num_times)))
     for j in range(num_images_per_prompt):
         images[j].save("../images/image_{}_{}.png".format(str(seed), str(j)))
