@@ -39,7 +39,7 @@ for i in range(num_times):
                        negative_prompt=neg_prompt)
     images = PipelineOut.images
 
-    print('Generate {} successfully.'.format(str(i)))
+    print('Generate {}/{} successfully.'.format(str(i), str(num_times)))
 
     for j in range(num_images_per_prompt):
         images[j].save("../images/image_{}_{}.png".format(str(seed), str(j)))
