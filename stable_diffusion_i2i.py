@@ -16,18 +16,18 @@ pipe = StableDiffusionImg2ImgPipeline.from_pretrained(model_id, torch_dtype=torc
 pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)
 pipe = pipe.to(device)
 
-init_image = Image.open("../i2itest.png")
+init_image = Image.open("../images/image_2950047911628730.png")
 width, height = init_image.size
-init_image = init_image.resize((512, 512))
+init_image = init_image.resize((768, 768))
 
 
-prompt = "beautiful anime girl, CG render, 8k, highly detailed, digital painting, masterpiece, best quality, 1girl, pink hair, green eyes, stars around head, looking at viewer, modern disney style"
+prompt = "masterpiece, best quality, 1girl, white hair, medium hair, cat ears, closed eyes, looking at viewer, :3, cute, scarf, jacket, outdoors, streets"
 neg_prompt = "bad fingers"
-strength = 0.5
+strength = 0.6
 guidance_scale = 7.5
 num_images_per_prompt = 1
 num_inference_steps = 50
-num_times = 2
+num_times = 1
 
 for i in range(num_times):
     generator = torch.Generator(device=device)
