@@ -13,7 +13,7 @@ import torch
 # model_id = "stabilityai/stable-diffusion-2-1"
 # model_id = "../stable-diffusion-2-1"
 # model_id = "../stable-diffusion-v1-5"
-model_id = "/home/models/model3"
+model_id = "/home/models/model4"
 device = torch.device("cuda")
 
 pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
@@ -23,11 +23,12 @@ pipe = pipe.to(device)
 prompt = "masterpiece, best quality, detailed, ultra-detailed, 1girl, young girl, loli, small breasts, lun, white and pink hair, detailed anime face, beautiful detailed face, green eyes, beautiful detailed eyes, looking at viewer, :3, cute, outdoors, streets, artistic expression, dynamic expression, illustrative expression, detailed expression, ultra-detailed expression, floating expression, painted expression"
 neg_prompt = "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry"
 num_inference_steps = 50
-height = 512
+height = 768
 width = 512
-num_images_per_prompt = 2
+num_images_per_prompt = 5
 guidance_scale = 7.5
 num_times = 1
+img_index = 0
 
 for i in range(num_times):
     generator = torch.Generator(device=device)
@@ -54,4 +55,5 @@ for i in range(num_times):
     print('Generate {}/{} successfully.'.format(i + 1, num_times))
 
     for j in range(num_images_per_prompt):
-        images[j].save("../images/image_{}.png".format(seeds[j]))
+        images[j].save("../images/image_{}_{}.png".format(img_index, seeds[j]))
+        img_index = img_index + 1
