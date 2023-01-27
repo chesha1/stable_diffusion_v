@@ -43,3 +43,4 @@ for st in strength:
         print('Generate {}/{} successfully.'.format(str(i+1), str(num_times)))
         for j in range(num_images_per_prompt):
             images[j].save("../images/image_{}_{}_{}.png".format(st, str(seed), str(j)))
+    print('Generate strength {} successfully.'.format(st))
