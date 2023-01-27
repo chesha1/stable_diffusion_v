@@ -37,7 +37,7 @@ for st in strength:
         generator = generator.manual_seed(seed)
 
         PipelineOut = pipe(prompt=prompt, negative_prompt=neg_prompt, image=init_image, num_inference_steps=num_inference_steps,
-                           strength=strength, guidance_scale=guidance_scale, generator=generator,
+                           strength=st, guidance_scale=guidance_scale, generator=generator,
                            num_images_per_prompt=num_images_per_prompt)
         images = PipelineOut.images
         print('Generate {}/{} successfully.'.format(str(i+1), str(num_times)))
